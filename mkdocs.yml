@@ -14,7 +14,6 @@ repo_url: 'https://github.com/Feedstock-to-Function/ftf-docs'
 
 nav:
   - Home: 'index.md'
-  - Foundation: 'foundation.md'
   - Methodology:
       - 'Property Prediction Algorighms': 'methodology/property-prediction.md'
   - User Reference:
