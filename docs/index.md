@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# Feedstock to Function Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This is a place for all documentation relating to the
+[Feedstock to Function Project](https://feestock-to-function.lbl.gov) (FTF), 
+encompassing:
 
-## Commands
+* Methodology: how we generate and validate our computed data sets
+* User Guide: materials analysis and design using our data and tools
+* User Reference: Detailed help for using our website,
+application programming interface (API), and codebases.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+If you notice an error or omission, please post an [issue](
+https://github.com/Feedstock-to-Function/ftf-docs/issues/new) or click a pencil icon
+(<span class="md-icon" style="color:grey">edit</span>) on a page to suggest an
+edit to us.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Thanks,  
+Feedstock to Function Project Team
