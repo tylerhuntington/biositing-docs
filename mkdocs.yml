@@ -1,0 +1,5 @@
+site_name: Feedstock to Function Docs
+
+theme:
+  name: material
+
