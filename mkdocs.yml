@@ -1,5 +1,44 @@
 site_name: Feedstock to Function Docs
 
-theme:
-  name: material
+site_description: Documentation for Feedstock to Function Tool,
+  a project that harnesses the power of machine learning to predict properties
+  of high-potential molecules derived from biomass and evaluates the cost,
+  benefits, and risk of promising biobased molecules or biofuels to enable
+  faster, less expensive bioprocess optimization and scale-up.
+copyright: Built by the Feedstock to Function Team
+site_url: https://feedstock-to-function.lbl.gov
 
+repo_name: 'Feestock-to-Function/ftf-docs'
+repo_url: 'https://github.com/Feedstock-to-Function/ftf-docs'
+
+
+nav:
+  - Home: 'index.md'
+  - Foundation: 'foundation.md'
+  - Methodology:
+      - 'Property Prediction Algorighms': 'methodology/prop-pred-algos.md'
+  - User Reference:
+      - 'REST API': 'open-apis/ftf-api.md'
+  - Database Updates: 'database-updates.md'
+
+theme:
+  name: 'material'
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+plugins:
+  - bibtex:
+      bib_dir: "refs"
+      cite_style: "pandoc"
+
+extra_javascript:
+  - static/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
