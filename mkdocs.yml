@@ -16,9 +16,10 @@ nav:
   - Home: 'index.md'
   - Foundation: 'foundation.md'
   - Methodology:
-      - 'Property Prediction Algorighms': 'methodology/prop-pred-algos.md'
+      - 'Property Prediction Algorighms':
+        'methodology/property-prediction-algorithms.md'
   - User Reference:
-      - 'REST API': 'open-apis/ftf-api.md'
+      - 'REST API': 'open-apis/rest-api.md'
   - Database Updates: 'database-updates.md'
 
 theme:
