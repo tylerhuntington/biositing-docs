@@ -17,7 +17,7 @@ nav:
   - Methodology:
       - 'Property Prediction Algorighms': 'methodology/property-prediction.md'
   - User Reference:
-      - 'REST API': 'open-apis/rest-api.md'
+      - 'REST API': 'user-guide/rest-api.md'
   - Database Updates: 'database-updates.md'
 
 theme:

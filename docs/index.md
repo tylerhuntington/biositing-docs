@@ -1,6 +1,6 @@
 # Feedstock to Function Documentation
 
-This is a place for all documentation relating to the
+This is the home for all documentation relating to the
 [Feedstock to Function Tool](https://feestock-to-function.lbl.gov) (FTF),
   a project that harnesses the power of machine learning to predict properties
   of high-potential molecules derived from biomass and evaluates the cost,
@@ -9,10 +9,10 @@ This is a place for all documentation relating to the
   
 The documentation on this site encompasses the following:  
 
-* Methodology: how we generate and validate our computed data sets
-* User Guide: materials analysis and design using our data and tools
-* User Reference: Detailed help for using our website,
-application programming interface (API), and codebases.
+* [Methodology](/methodology/property-prediction/): 
+how we generate and validate our computed data sets
+* [User Reference](/user-guide/rest-api/): Detailed help for using our website
+ and application programming interface (API).
 
 If you notice an error or omission, please post an [issue](
 https://github.com/Feedstock-to-Function/ftf-docs/issues/new) 
