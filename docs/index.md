@@ -9,9 +9,9 @@ This is the home for all documentation relating to the
   
 The documentation on this site encompasses the following:  
 
-* [Methodology](/ftf-docs/methodology/property-prediction/): 
+* [Methodology](../methodology/property-prediction/): 
 how we generate and validate our computed data sets
-* [User Reference](/ftf-docs/user-guide/rest-api/): Detailed help for using our website
+* [User Reference](../user-guide/rest-api/): Detailed help for using our website
  and application programming interface (API).
 
 If you notice an error or omission, please post an [issue](
