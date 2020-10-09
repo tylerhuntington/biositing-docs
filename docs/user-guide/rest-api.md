@@ -97,12 +97,13 @@ is a preamble, specifying a https REST request.
 The v1 denotes version 1 of the API,
 to provide flexibility to support multiple versions of the API in future. 
 
-2.{resource_type} specifies the kind of information or 
-operation being requested.
-Currently supported request types include "chemicals" and "blends"
 
-3. {parameters} - Some requests require additional parameters
-to be provided.
+2. `{resource_type}` specifies the kind of information or 
+operation being requested.
+Currently supported request types include `chemicals` and `blends`.
+
+
+3. `{parameters}` specifies optional query parameters (details below).
 
 ### General Response Format
 
