@@ -92,14 +92,16 @@ All URIs in the FTF-API are of the general form
 
 `https://feedstock-to-function.lbl.gov/api/v1/{resource_type}[/{parameters}]`
 
-1. The initial part of the URI (https://feedstock-to-function.lbl.gov/api/v1/) is a
-preamble, specifying a https REST request. The v1 denotes version 1 of the API,
-to provide flexibility to support multiple versions of the API in future. 2.
-{request_type} specifies the kind of information or operation being requested.
-Currently supported request types include "materials", "battery", "reaction",
-"mpquery" and "api_check". 3. {identifier} is an identifier for the specific
-information requested. Depending on the {request_type}, an identifier may or may
-not be necessary. 4. {parameters} - Some requests require additional parameters
+1. The initial part of the URI (https://feedstock-to-function.lbl.gov/api/v1/) 
+is a preamble, specifying a https REST request. 
+The v1 denotes version 1 of the API,
+to provide flexibility to support multiple versions of the API in future. 
+
+2.{resource_type} specifies the kind of information or 
+operation being requested.
+Currently supported request types include "chemicals" and "blends"
+
+3. {parameters} - Some requests require additional parameters
 to be provided.
 
 ### General Response Format
