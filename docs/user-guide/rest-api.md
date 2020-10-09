@@ -69,7 +69,7 @@ The following is an example of a full url requesting for information of the
 material with SMILES ID CCO with the API key supplied as a GET variable.
 
 ```
-https://www.feedstock-to-function.lbl.gov/api/v2/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
+https://feedstock-to-function.lbl.gov/api/v2/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
 ```
 
 ## Security
@@ -90,9 +90,9 @@ right to disable API keys as a security precaution against bots.
 
 All URIs in the FTF-API are of the general form
 
-`https://www.feedstock-to-function.lbl.gov/api/v1/{resource_type}[/{parameters}]`
+`https://feedstock-to-function.lbl.gov/api/v1/{resource_type}[/{parameters}]`
 
-1. The initial part of the URI (https://www.feedstock-to-function.lbl.gov/api/v2/) is a
+1. The initial part of the URI (https://feedstock-to-function.lbl.gov/api/v2/) is a
 preamble, specifying a https REST request. The v2 denotes version 2 of the MAPI,
 to provide flexibility to support multiple versions of the API in future. 2.
 {request_type} specifies the kind of information or operation being requested.
@@ -129,7 +129,7 @@ valid links to the next and previous 'page' of results.
 
 #### Request Template
 ```
-GET https://www.feedstock-to-function.lbl.gov/api/v1/chemicals/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
+GET https://feedstock-to-function.lbl.gov/api/v1/chemicals/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
 ```
 
 Obtain chemical substance data based on an identifier. The response is always a
@@ -138,7 +138,7 @@ identifiers include `name`, `smiles`, `iupac`, `inchi`, `cas` and `inchi`.
 For example, the following query will return the chemical substance 
 with the SMILES ID CCO (ethanol):
 ```
-GET https://www.feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO
+GET https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO
 ```
 Note that since no fields were specified in the optional `fields` portion of the
 query string, this request will yield a response that include all attributes
@@ -147,7 +147,7 @@ in retrieving the chemical formula, IUPAC name and InChI key for ethanol, we
 could specify these fields of interest in the query as such:
 
 ```
-GET https://www.feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO&fields=formula,iupac,inchi
+GET https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO&fields=formula,iupac,inchi
 ```
 
 #### Fields
@@ -337,6 +337,6 @@ be included in the results set of a `chemicals` query:
 
 #### Request Template
 ```
-GET https://www.feedstock-to-function.lbl.gov/api/v1/blends/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
+GET https://feedstock-to-function.lbl.gov/api/v1/blends/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
 ```
     
