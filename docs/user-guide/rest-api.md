@@ -69,7 +69,7 @@ The following is an example of a full url requesting for information of the
 material with SMILES ID CCO with the API key supplied as a GET variable.
 
 ```
-https://feedstock-to-function.lbl.gov/api/v2/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
+https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
 ```
 
 ## Security
@@ -92,8 +92,8 @@ All URIs in the FTF-API are of the general form
 
 `https://feedstock-to-function.lbl.gov/api/v1/{resource_type}[/{parameters}]`
 
-1. The initial part of the URI (https://feedstock-to-function.lbl.gov/api/v2/) is a
-preamble, specifying a https REST request. The v2 denotes version 2 of the MAPI,
+1. The initial part of the URI (https://feedstock-to-function.lbl.gov/api/v1/) is a
+preamble, specifying a https REST request. The v1 denotes version 1 of the API,
 to provide flexibility to support multiple versions of the API in future. 2.
 {request_type} specifies the kind of information or operation being requested.
 Currently supported request types include "materials", "battery", "reaction",
