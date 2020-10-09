@@ -8,14 +8,14 @@ site_description: Documentation for Feedstock to Function Tool,
 copyright: Built by the Feedstock to Function Team
 site_url: https://feedstock-to-function.lbl.gov
 
-repo_name: 'Feestock-to-Function/ftf-docs'
+repo_name: 'Feedstock-to-Function/ftf-docs'
 repo_url: 'https://github.com/Feedstock-to-Function/ftf-docs'
 
 
 nav:
   - Home: 'index.md'
   - Methodology:
-      - 'Property Prediction Algorighms': 'methodology/property-prediction.md'
+      - 'Property Prediction': 'methodology/property-prediction.md'
   - User Reference:
       - 'REST API': 'user-guide/rest-api.md'
   - Database Updates: 'database-updates.md'
