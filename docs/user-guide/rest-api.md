@@ -66,7 +66,8 @@ All FTF-API https requests must supply API key by one of the following methods:
 ```
 
 The following is an example of a full url requesting for information of the
-material with SMILES ID CCO with the API key supplied as a GET variable.
+chemical substance with SMILES ID CCO with the API key 
+supplied as a GET variable.
 
 ```
 https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
