@@ -16,6 +16,7 @@ nav:
   - Home: 'index.md'
   - Methodology:
       - 'Property Prediction': 'methodology/property-prediction.md'
+      - 'Blend Tool': 'methodology/blend-tool.md'
   - User Reference:
       - 'REST API': 'user-guide/rest-api.md'
   - Database Updates: 'database-updates.md'
