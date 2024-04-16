@@ -1,48 +1,51 @@
-# Feedstock to Function API (v1)
+# Biositing Tool API (v1)
 
-The Feedstock to Function API (FTF-API) is an open API for accessing 
-our chemical properties data
+The Biositing Tool API is an open API for accessing 
+core data and in our tool
 based on REpresentational State Transfer (REST) principles. In a RESTful system,
 information is organized into **resources**, each of which is uniquely
 identified via a uniform resource identifier (URI). This page documents the 
-first release (v1) of the FTF-API and provides examples of common use-cases.
+first release (v1) of the Biositing API and provides examples of common use-cases.
 
 
 <!--- 
-(While the FTF-API is designed to be code base agnostic and can conceivably be
+(While the Biositing API is designed to be code base agnostic and can conceivably be
 used
 with any programming language supporting basic http requests, a convenient
-wrapper to MAPI has been implemented in the [Python Materials Genomics
+wrapper to the API has been implemented in the [Python Materials Genomics
 (pymatgen)](http://pypi.python.org/pypi/pymatgen) library to facilitate
-researchers in using the MAPI. Please see the [#pymatgen
+researchers in using the API. Please see the [#pymatgen
 wrapper](#pymatgen-wrapper) section.
 --->
 
 ## Resources 
-In the Feedstock to Function Tool, resources are generally packages of 
+In the Biositing Tool, resources are generally packages of 
 information about a chemical substance or blend of substances. Currently
 supported information types (v1 of the REST API) include the following:
 
-**Chemical** - Identification attributes (i.e. SMILES, InChIKey, IUPAC, etc.) 
-and properties (experimental and/or predicted) of a chemical
-substance.
+**Ethanol Biorefineries** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
+and properties (capacity, operational status) of ethanol biorefineries in the continental U.S.
 
-**Blend** - Identification attributes
-and properties (experimental and/or predicted) of a chemical blend.
+**Renewable Diesel Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
+and properties (capacity, operational status) of renewable diesel plants in the continental U.S.
+
+**Sustainable Aviation Fuel (SAF) Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
+and properties (capacity, operational status) of SAF plants in the continental U.S.
 
 ## Authentication
 
-SSL Encryption All requests to the FTF-API must be done over HTTPS.
+SSL Encryption All requests to the Biositing API must be done over HTTPS.
 Non-secure http requests are not allowed and will result in a HTTP 403
 (Forbidden) response.
 
 
+<!--- 
 ### API keys
 
-To access the FTF-API, you will need your API key, except for certain free
+To access the Biositing API, you will need your API key, except for certain free
 queries that do not require a key. You can obtain your API key by logging into
-the Feedstock to Function website, and going to 
-[your profile page](https://feedstock-to-function.lbl.gov/accounts/change). 
+the Biositing website, and going to 
+[your profile page](https://biositing.jbei.org/accounts/change). 
 Your API key and a button to
 regenerate the key is provided at the bottom of the page.
 
@@ -50,11 +53,11 @@ Note that the API key effectively allows access to FTF data via
 your account. You should therefore make all efforts to keep it secret and under
 no circumstances should you share your API key with anyone. You will be held
 responsible for any violations conducted using your API key. Should anyone else
-require access to the FTF-API, they should register for an 
-account on our [website](https://feedstock-to-function.lbl.gov/accounts/create) 
+require access to the Biositing API, they should register for an 
+account on our [website](https://biositing.jbei.org/accounts/create) 
 and generate their own API keys.
 
-All FTF-API https requests must supply API key by one of the following methods:
+All Biositing API https requests must supply API key by one of the following methods:
 
 * As an x-api-key header (recommended method), e.g., 
 ```
@@ -70,8 +73,10 @@ chemical substance with SMILES ID CCO with the API key
 supplied as a GET variable.
 
 ```
-https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
+https://biositing.jbei.org/api/v1/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
 ```
+
+--->
 
 ## Security
 
@@ -82,18 +87,18 @@ plan to download large datasets, please email feedstocktofunction@gmail.com
 with the email address associated with your account and with your use case so
 that we can avoid flagging your account as abusing the service. We may also
 suggest an efficient way for you to obtain the data you need. We reserve the
-right to disable API keys as a security precaution against bots.
+right to disable API access as a security precaution against bots.
 
 
 ## API Reference
 
 ### General URI Format
 
-All URIs in the FTF-API are of the general form
+All URIs in the Biositing API are of the general form
 
-`https://feedstock-to-function.lbl.gov/api/v1/{resource_type}[/{parameters}]`
+`https://biositing.jbei.org/api/v1/{resource_type}[/{parameters}]`
 
-1. The initial part of the URI (https://feedstock-to-function.lbl.gov/api/v1/) 
+1. The initial part of the URI (https://biositing.jbei.org/api/v1/) 
 is a preamble, specifying a https REST request. 
 The v1 denotes version 1 of the API,
 to provide flexibility to support multiple versions of the API in future. 
@@ -108,7 +113,7 @@ Currently supported request types include `chemicals` and `blends`.
 
 ### General Response Format
 
-All responses from the FTF-API are in the JavaScript Object Notation
+All responses from the Biositing API are in the JavaScript Object Notation
 (JSON). XML is not supported currently. The responses generally are of the
 following form:
 
@@ -133,7 +138,7 @@ valid links to the next and previous 'page' of results.
 
 #### Request Template
 ```
-GET https://feedstock-to-function.lbl.gov/api/v1/chemicals/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
+GET https://biositing.jbei.org/api/v1/chemicals/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
 ```
 
 Obtain chemical substance data based on an identifier. The response is always a
@@ -142,7 +147,7 @@ identifiers include `name`, `smiles`, `iupac`, `inchi`, `cas` and `inchi`.
 For example, the following query will return the chemical substance 
 with the SMILES ID CCO (ethanol):
 ```
-GET https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO
+GET https://biositing.jbei.org/api/v1/chemicals/?smiles=CCO
 ```
 Note that since no fields were specified in the optional `fields` portion of the
 query string, this request will yield a response that include all attributes
@@ -151,7 +156,7 @@ in retrieving the chemical formula, IUPAC name and InChI key for ethanol, we
 could specify these fields of interest in the query as such:
 
 ```
-GET https://feedstock-to-function.lbl.gov/api/v1/chemicals/?smiles=CCO&fields=formula,iupac,inchi
+GET https://biositing.jbei.org/api/v1/chemicals/?smiles=CCO&fields=formula,iupac,inchi
 ```
 
 #### Fields
@@ -341,6 +346,6 @@ be included in the results set of a `chemicals` query:
 
 #### Request Template
 ```
-GET https://feedstock-to-function.lbl.gov/api/v1/blends/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
+GET https://biositing.jbei.org/api/v1/blends/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
 ```
     
