@@ -1,17 +1,13 @@
 # Feedstock to Function Documentation
 
 This is the home for all documentation relating to the
-[Feedstock to Function Tool](https://feestock-to-function.lbl.gov) (FTF),
-  a project that harnesses the power of machine learning to predict properties
-  of high-potential molecules derived from biomass and evaluates the cost,
-  benefits, and risk of promising biobased molecules or biofuels to enable
-  faster, less expensive bioprocess optimization and scale-up.
+[Biositing Tool](https://biositing.jbei.org),is aeospatial platform for analyzing bioeconomy resources and infrastructure across the U.S.
   
 The documentation on this site encompasses the following:  
 
-* [Methodology](/ftf-docs/methodology/property-prediction/): 
-how we generate and validate our computed data sets
-* [User Reference](/ftf-docs/user-guide/rest-api/): Detailed help for using our website
+* [Methodology](/biositing-docs/methodology/property-prediction/): 
+how we generate and validate our computed data sets.
+* [User Reference](/biositing-docs/user-guide/rest-api/): Detailed help for using our website
  and application programming interface (API).
 
 If you notice an error or omission, please post an [issue](
@@ -21,4 +17,4 @@ or click a pencil icon
 edit to us.
 
 Thanks,  
-Feedstock to Function Project Team
+The Biosting Tool Development Team
