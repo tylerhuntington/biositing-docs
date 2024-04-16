@@ -1,6 +1,6 @@
 # Biositing Tool API (v1)
 
-tyler The Biositing Tool API is an open API for accessing 
+tyler tarr The Biositing Tool API is an open API for accessing 
 core data and in our tool
 based on REpresentational State Transfer (REST) principles. In a RESTful system,
 information is organized into **resources**, each of which is uniquely
