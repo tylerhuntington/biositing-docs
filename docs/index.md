@@ -1,4 +1,4 @@
-# Feedstock to Function Documentation
+# Biositing Tool Documentation
 
 This is the home for all documentation relating to the
 [Biositing Tool](https://biositing.jbei.org),is aeospatial platform for analyzing bioeconomy resources and infrastructure across the U.S.
