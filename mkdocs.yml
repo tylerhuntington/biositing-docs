@@ -1,11 +1,7 @@
 site_name: Biositing Tool Docs
 
-site_description: Documentation for Feedstock to Function Tool,
-  a project that harnesses the power of machine learning to predict properties
-  of high-potential molecules derived from biomass and evaluates the cost,
-  benefits, and risk of promising biobased molecules or biofuels to enable
-  faster, less expensive bioprocess optimization and scale-up.
-copyright: Built by the Feedstock to Function Team
+site_description: Documentation for the Biositing Tool
+copyright: Built by the Biositing Tool Development Team
 site_url: https://biositing.jbei.org
 
 repo_name: 'tylerhuntington/biositing-docs'
