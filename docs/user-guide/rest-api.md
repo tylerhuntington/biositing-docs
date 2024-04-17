@@ -1,14 +1,14 @@
 # Biositing Tool API (v1)
 
-The Biositing Tool API is an open API for accessing 
-core data and in our tool
+The Biositing Tool API is an open API for programatically accessing 
+data in our geospatial platform
 based on REpresentational State Transfer (REST) principles. In a RESTful system,
 information is organized into **resources**, each of which is uniquely
 identified via a uniform resource identifier (URI). This page documents the 
 first release (v1) of the Biositing API and provides examples of common use-cases.
 
 
-<!--- 
+<!--- START BLOCK COMMENT 
 (While the Biositing API is designed to be code base agnostic and can conceivably be
 used
 with any programming language supporting basic http requests, a convenient
@@ -16,21 +16,20 @@ wrapper to the API has been implemented in the [Python Materials Genomics
 (pymatgen)](http://pypi.python.org/pypi/pymatgen) library to facilitate
 researchers in using the API. Please see the [#pymatgen
 wrapper](#pymatgen-wrapper) section.
---->
+END BLOCK COMMENT --->
 
 ## Resources 
-In the Biositing Tool, resources are generally packages of 
-information about a chemical substance or blend of substances. Currently
+In the Biositing API, resources refer to specific types of data in the tool that can be accessed programatically with a URI endpoint. Currently
 supported information types (v1 of the REST API) include the following:
 
 **Ethanol Biorefineries** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
 and properties (capacity, operational status) of ethanol biorefineries in the continental U.S.
 
-**Renewable Diesel Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
-and properties (capacity, operational status) of renewable diesel plants in the continental U.S.
+**Renewable Diesel & SAF Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
+and properties (capacity, operational status) of renewable diesel and SAF plants in the continental U.S.
 
-**Sustainable Aviation Fuel (SAF) Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
-and properties (capacity, operational status) of SAF plants in the continental U.S.
+**...** 
+**More coming soon!** 
 
 ## Authentication
 
@@ -96,21 +95,21 @@ right to disable API access as a security precaution against bots.
 
 All URIs in the Biositing API are of the general form
 
-`https://biositing.jbei.org/api/v1/{resource_type}[/{parameters}]`
+`https://biositing.jbei.org/api/v1/{resource_type}[?{parameters}]`
 
 1. The initial part of the URI (https://biositing.jbei.org/api/v1/) 
 is a preamble, specifying a https REST request. 
 The v1 denotes version 1 of the API,
-to provide flexibility to support multiple versions of the API in future. 
-
+to provide flexibility to support multiple versions of the API in the future. 
 
 2. `{resource_type}` specifies the kind of information or 
 operation being requested.
-Currently supported request types include `chemicals` and `blends`.
 
+3. `{parameters}` specifies optional query parameters in the format `key=value`.
+When specifying mulitple query parameters in a URIthey must be separated
+by `&` characters e.g. `key1=value1&key2=value2&key3=value3`
 
-3. `{parameters}` specifies optional query parameters (details below).
-
+<!--- START BLOCK COMMENT 
 ### General Response Format
 
 All responses from the Biositing API are in the JavaScript Object Notation
@@ -132,33 +131,80 @@ of 10. If the size of the results set is less than 10, the `next` and `previous`
 fields of the response object will be `null`. Otherwise, they will provide
 valid links to the next and previous 'page' of results. 
 
+END BLOCK COMMENT--->
+
 ## Resources
 
-### `chemicals`
+
+**Renewable Diesel & SAF Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
+and properties (capacity, operational status) of renewable diesel and SAF plants in the continental U.S.
+
+### `ethanol_biorefineries`
 
 #### Request Template
 ```
-GET https://biositing.jbei.org/api/v1/chemicals/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
+GET https://biositing.jbei.org/api/v1/ethanol_biorefineries
 ```
 
-Obtain chemical substance data based on an identifier. The response is always a
-list of associative arrays, i.e., `[ {key:value, ... }, {... }, ...]`. Valid
-identifiers include `name`, `smiles`, `iupac`, `inchi`, `cas` and `inchi`.
-For example, the following query will return the chemical substance 
-with the SMILES ID CCO (ethanol):
-```
-GET https://biositing.jbei.org/api/v1/chemicals/?smiles=CCO
-```
-Note that since no fields were specified in the optional `fields` portion of the
-query string, this request will yield a response that include all attributes
-of the chemicals in the result set. If, for example we were only interested
-in retrieving the chemical formula, IUPAC name and InChI key for ethanol, we 
-could specify these fields of interest in the query as such:
+Obtain dataset of ethanol biorefineries in the continental U.S. Attributes 
+include name, address, latitude, longitude, capacity, operational status, etc.
 
+### `renewable_diesel_saf_plants`
+
+#### Request Template
 ```
-GET https://biositing.jbei.org/api/v1/chemicals/?smiles=CCO&fields=formula,iupac,inchi
+GET https://biositing.jbei.org/api/v1/renewable_diesel_saf_plants
 ```
 
+Obtain dataset of renewable diesel and SAF plants in the continental U.S. 
+Attributes include name, address, latitude, longitude, capacity, 
+operational status, etc.
+
+### `site_buffer`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/chemicals?latitude={LATITUDE}&longitude={LONGITUDE}&radius={RADIUS}
+```
+
+Obtain an inventory of bioeconomy resources (e.g. biomass, municipal solid waste, plastic waste etc.) within a defined buffer radius of a point location specified by latitude and longitude coordinates.
+
+#### Required Parameters
+The following query parameters must be specified in the GET request URI.
+
+`latitude` 
+  
+  -  Latitude coordinate of buffer zone centroid in in decimal degrees format 
+  e.g. `39.44869283589919`
+
+`longitude` 
+  
+  -  Longitude coordinate of buffer zone centroid in in decimal degrees format. 
+  e.g. `-92.48419980931273`
+
+`radius` 
+  
+  -  Radial distance (in kilometers) to define the buffer zone around the point
+  specified by `latitude` and `longitude`
+
+#### Optional Parameters
+The following optional parameters may also be specified:
+
+`summarize=true` 
+  
+  -  Whether to return sum totals resource types
+  within the site buffer zone instead of returning individual point-level
+  resource estimates. Note: this is a fixed parameter for which the only
+  allowable value is `true`.
+  
+
+#### Example Usage
+```
+GET https://biositing.jbei.org/api/v1/site_buffer/?latitude=39.44869283589919&longitude=-92.48419980931273&radius=20
+```
+
+
+<!--- START BLOCK COMMENT 
 #### Fields
 The following fields may be specified as comma-separated values for the `fields`
 query parameter to request a specific subset of information 
@@ -340,12 +386,9 @@ be included in the results set of a `chemicals` query:
   
   * Scientific unit of experimentally measured and predicted derived yield
     sooting index values of a chemical substance
+END BLOCK COMMENT --->
     
     
-### `blends`
-
-#### Request Template
-```
-GET https://biositing.jbei.org/api/v1/blends/?{IDENTIFIER}={VALUE}[&fields={FIELD_1,FIELD_2,FIELD_3,...}]
-```
+<!--- START BLOCK COMMENT 
+END BLOCK COMMENT --->
     
