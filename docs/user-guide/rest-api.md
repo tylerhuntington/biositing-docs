@@ -1,4 +1,4 @@
-# Biositing Tool API (v1) Tessa
+# Biositing Tool API (v1)
 
 The Biositing Tool API is an open API for programatically accessing 
 data in our geospatial platform

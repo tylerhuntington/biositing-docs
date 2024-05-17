@@ -9,3 +9,5 @@ Serve the docs:
 ```
 mkdocs serve
 ```
+
+Deployment via Github Pages: https://www.mkdocs.org/user-guide/deploying-your-docs/
