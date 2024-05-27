@@ -92,7 +92,7 @@ https://biositing.jbei.org/api/v1/chemicals/?smiles=CCO&API_KEY={YOUR_API_KEY}
 You agree not to use automated scripts to collect large fractions of the
 database and disseminate them. You may collect large fractions of the database
 for analysis and to present processed results with proper attribution. If you
-plan to download large datasets, please email feedstocktofunction@gmail.com
+plan to download large datasets, please email lead.jbei@gmail.com
 with the email address associated with your account and with your use case so
 that we can avoid flagging your account as abusing the service. We may also
 suggest an efficient way for you to obtain the data you need. We reserve the
