@@ -18,18 +18,28 @@ researchers in using the API. Please see the [#pymatgen
 wrapper](#pymatgen-wrapper) section.
 END BLOCK COMMENT --->
 
-## Resources 
-In the Biositing API, resources refer to specific types of data in the tool that can be accessed programatically with a URI endpoint. Currently
-supported information types (v1 of the REST API) include the following:
+[//]: # (## Resources )
 
-**Ethanol Biorefineries** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
-and properties (capacity, operational status) of ethanol biorefineries in the continental U.S.
+[//]: # (In the Biositing API, resources refer to specific types of data in the tool that )
 
-**Renewable Diesel & SAF Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
-and properties (capacity, operational status) of renewable diesel and SAF plants in the continental U.S.
+[//]: # (can be accessed programatically with a URI endpoint. )
 
-**...** 
-**More coming soon!** 
+[//]: # (Currently)
+[//]: # (supported information types &#40;v1 of the REST API&#41; include the following:)
+
+[//]: # (**Ethanol Biorefineries** - Identifiers &#40;i.e. name, address, latitude, longitude, etc.&#41; )
+
+[//]: # (and properties &#40;capacity, operational status&#41; of ethanol biorefineries in the continental U.S.)
+
+[//]: # ()
+[//]: # (**Renewable Diesel & SAF Plants** - Identifiers &#40;i.e. name, address, latitude, longitude, etc.&#41; )
+
+[//]: # (and properties &#40;capacity, operational status&#41; of renewable diesel and SAF plants in the continental U.S.)
+
+[//]: # ()
+[//]: # (**...** )
+
+[//]: # (**More coming soon!** )
 
 ## Authentication
 
@@ -133,11 +143,12 @@ valid links to the next and previous 'page' of results.
 
 END BLOCK COMMENT--->
 
-## Resources
+## Resources 
+In the Biositing API, resources refer to specific types of data in the tool that 
+can be accessed programatically with a URI endpoint.
+Currently
+supported endpoints (v1 of the REST API) include the following:
 
-
-**Renewable Diesel & SAF Plants** - Identifiers (i.e. name, address, latitude, longitude, etc.) 
-and properties (capacity, operational status) of renewable diesel and SAF plants in the continental U.S.
 
 ### `ethanol_biorefineries`
 
@@ -160,11 +171,150 @@ Obtain dataset of renewable diesel and SAF plants in the continental U.S.
 Attributes include name, address, latitude, longitude, capacity, 
 operational status, etc.
 
+### `biosolids_facilities`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/biosolids_facilities
+```
+
+Obtain dataset of biosolids facilities
+in the continental
+U.S.
+
+### `biodiesel_plants`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/biodiesel_plants
+```
+
+Obtain dataset of biodiesel plants
+in the continental
+U.S.
+
+### `livestock_anaerobic_digesters`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/livestock_anaerobic_digesters
+```
+
+Obtain dataset of livestock anaerobic digesters
+in the continental
+U.S.
+
+### `nass_manure`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/nass_manure
+```
+
+Obtain dataset of sub-county point source estimates of manure in the continental
+U.S. downscaled from county-level data from the 2022 USDA NASS Census of 
+Agriculture.
+
+### `cafos`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/cafos
+```
+
+Obtain dataset of CAFO locations and production amounts for the continental U.S.
+
+### `nass_ag_residues`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/nass_ag_residues
+```
+
+Obtain dataset of sub-county point source estimates of agricultural residues
+in the continental
+U.S. downscaled from county-level data from the 2022 USDA NASS Census of
+Agriculture.
+
+
+
+### `fats_oils_greases`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/fats_oils_greases
+```
+
+Obtain dataset of fats, oils, and greases estimates at the county level
+for the continental
+U.S.
+
+
+### `rtr_geo_storage`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/rtr_geo_storage
+```
+
+Obtain dataset of geologic storage potential 
+in the continental
+U.S.
+based on the Roads to Removal Report.
+
+### `rcsp_saline_geo_storage`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/rcsp_saline_geo_storage
+```
+
+Obtain dataset of geologic storage potential
+in saline formations across the continental
+U.S.
+based on data from the Regional Carbon Sequestration Partnership.
+
+### `usgs_coal_geo_storage`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/usgs_coal_geo_storage
+```
+
+Obtain dataset of geologic storage potential
+in coal formations across the continental
+U.S.
+based on data from the U.S. Geological Survey.
+
+
+### `cejst_ej_indicators`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/cejst_ej_indicators
+```
+
+Obtain dataset of U.S. census tract level environmental 
+justice indicators based on the Climate and Economic Justice Screening Tool.
+
+
+### `grid_transmission_regions`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/grid_transmission_regions
+```
+
+Obtain dataset of simplified grid transmission regions based on 
+the 2023 National Transmission Needs Study by U.S. Department of
+                          Energy.
+
+
 ### `site_buffer`
 
 #### Request Template
 ```
-GET https://biositing.jbei.org/api/v1/chemicals?latitude={LATITUDE}&longitude={LONGITUDE}&radius={RADIUS}
+GET https://biositing.jbei.org/api/v1/site_buffer?latitude={LATITUDE}&longitude={LONGITUDE}&radius={RADIUS}
 ```
 
 Obtain an inventory of bioeconomy resources (e.g. biomass, municipal solid waste, plastic waste etc.) within a defined buffer radius of a point location specified by latitude and longitude coordinates.
@@ -200,7 +350,7 @@ The following optional parameters may also be specified:
 
 #### Example Usage
 ```
-GET https://biositing.jbei.org/api/v1/site_buffer/?latitude=39.44869283589919&longitude=-92.48419980931273&radius=20
+GET https://biositing.jbei.org/api/v1/site_buffer?latitude=39.44869283589919&longitude=-92.48419980931273&radius=20
 ```
 
 
