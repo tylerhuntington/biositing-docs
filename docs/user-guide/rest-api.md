@@ -369,6 +369,7 @@ The following query parameters must be specified in the GET request URI.
 
 -  Two-letter abbreviation (capitalized) of the state for which to query data
    e.g. `CA` for California, `OR` for Oregon, etc. A full list can be found [here](https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html)
+- <a href="https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html" target="_blank">Opens in new tab</a>
 
 `bt_scenario`
 
