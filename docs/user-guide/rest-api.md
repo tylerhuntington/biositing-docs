@@ -360,24 +360,36 @@ GET https://biositing.jbei.org/api/v1/site_buffer?latitude=39.44869283589919&lon
 GET https://biositing.jbei.org/api/v1/state_data?state={STATE}&bt_scenario={BILLION_TON_SCENARIO}&resource_type={RESOURCE_TYPE}
 ```
 
-Obtain an inventory of bioeconomy resources within a state.
+Obtain an inventory of bioeconomy resources
+within a state. Data is sourced from the <a href="https://www.energy.gov/eere/bioenergy/2023-billion-ton-report-assessment-us-renewable-carbon-resources" target="_blank">2023 Billion Ton Report</a> and downscaled 
+to sub-county point-level estimates.
 
 #### Required Parameters
 The following query parameters must be specified in the GET request URI.
 
 `state`
 
--  Two-letter abbreviation (capitalized) of the state for which to query data
-   e.g. `CA` for California, `OR` for Oregon, etc. A full list can be found [here](https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html)
-- <a href="https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html" target="_blank">Opens in new tab</a>
+-  Two-letter abbreviation (capitalized) of the state for which data should be queried
+   (e.g. `CA` for California, `OR` for Oregon, etc.). A full list of U.S. states and their two-letter abbreviations can be found <a href="https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html" target="_blank">here</a>.
 
 `bt_scenario`
 
--  2023 Billion Ton Study Scenario for which to query data. Must be one of `near-term`, `mature-market-low`, `mature-market-medium`, `mature-market-high`, or `emerging`. More details can be found in the 2023 Billion Ton Report.
+-  2023 Billion Ton Study Scenario for which data should be queried. Scenario definitions can be found <a href="https://www.energy.gov/sites/default/files/2024-03/beto-2023-billion-ton-report_0-exec-sum_0.pdf#page=4" target="_blank">here</a>. Must be one of the following:
+    - `near-term`
+    - `mature-market-low`
+    - `mature-market-medium`
+    - `mature-market-high`
+    - `emerging`
+
 
 `resource_type`
 
--  Type of resources to be queried for the state. Must be one of `AgResidues`, `EnergyCrops`, `FoodWaste`, `Manure`, `MSW`.
+-  Type of resources for which data should be queried. Must be one of the following:
+    - `AgResidues`
+    - `EnergyCrops`
+    - `FoodWaste`
+    - `Manure`
+    - `MSW`
 
 [//]: # (#### Optional Parameters)
 
