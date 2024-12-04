@@ -353,6 +353,53 @@ The following optional parameters may also be specified:
 GET https://biositing.jbei.org/api/v1/site_buffer?latitude=39.44869283589919&longitude=-92.48419980931273&radius=20
 ```
 
+### `state_data`
+
+#### Request Template
+```
+GET https://biositing.jbei.org/api/v1/state_data?state={STATE}&bt_scenario={BILLION_TON_SCENARIO}&resource_type={RESOURCE_TYPE}
+```
+
+Obtain an inventory of bioeconomy resources within a state.
+
+#### Required Parameters
+The following query parameters must be specified in the GET request URI.
+
+`state`
+
+-  Two-letter abbreviation (capitalized) of the state for which to query data
+   e.g. `CA` for California, `OR` for Oregon, etc. A full list can be found [here](https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html)
+
+`bt_scenario`
+
+-  2023 Billion Ton Study Scenario for which to query data. Must be one of `near-term`, `mature-market-low`, `mature-market-medium`, `mature-market-high`, or `emerging`. More details can be found in the 2023 Billion Ton Report.
+
+`resource_type`
+
+-  Type of resources to be queried for the state. Must be one of `AgResidues`, `EnergyCrops`, `FoodWaste`, `Manure`, `MSW`.
+
+[//]: # (#### Optional Parameters)
+
+[//]: # (The following optional parameters may also be specified:)
+
+[//]: # ()
+[//]: # (`summarize=true`)
+
+[//]: # ()
+[//]: # (-  Whether to return sum totals resource types)
+
+[//]: # (   within the site buffer zone instead of returning individual point-level)
+
+[//]: # (   resource estimates. Note: this is a fixed parameter for which the only)
+
+[//]: # (   allowable value is `true`.)
+
+
+#### Example Usage
+```
+GET https://biositing.jbei.org/api/v1/state_data?state=CA&bt_scenario=near-term&resource_type=AgResidues
+```
+
 
 <!--- START BLOCK COMMENT 
 #### Fields
