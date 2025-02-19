@@ -384,25 +384,26 @@ The following query parameters must be specified in the GET request URI.
 
 `subclass`
 
-Resource subclass for which data should be queried. Must be one of the following:
+2023 Billion Ton Study resource subclass for which data should be queried. Must be one of the following:
 
-- AgProcessingWaste 
-- AgriculturalResidues 
-- EnergyCropsHerbaceous
-- IntermediateOilseeds
-- EnergyCropsWoody
-- FireReductionThinnings 
-- ForestProcessingWaste 
-- LoggingResidues 
-- OtherForestWaste
-- SmallDiameterTrees
-- FOG 
-- Paper 
-- Plastic 
-- Other solid waste 
-- OtherWetWaste 
-- GaseousResourcesLandfillGas
-- GaseousResourcesCO2
+- `AgProcessingWaste`
+- `AgriculturalResidues`
+- `EnergyCropsHerbaceous`
+- `IntermediateOilseeds`
+- `EnergyCropsWoody`
+- `FireReductionThinnings`
+- `ForestProcessingWaste`
+- `LoggingResidues`
+- `OtherForestWaste`
+- `SmallDiameterTrees`
+- `FOG`
+- `Paper`
+- `Plastic`
+- `OtherSolidWaste`
+- `OtherWetWaste`
+- `GaseousResourcesLandfillGas`
+- `GaseousResourcesCO2`
+- `GaseousResourcesCO2HighConcentration`
 
 [//]: # (Intermediate oilseeds)
 
