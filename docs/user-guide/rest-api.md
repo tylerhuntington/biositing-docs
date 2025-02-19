@@ -382,14 +382,40 @@ The following query parameters must be specified in the GET request URI.
     - `emerging`
 
 
-`resource_type`
+`subclass`
 
--  Type of resources for which data should be queried. Must be one of the following:
-    - `AgResidues`
-    - `EnergyCrops`
-    - `FoodWaste`
-    - `Manure`
-    - `MSW`
+Resource subclass for which data should be queried. Must be one of the following:
+
+- AgProcessingWaste 
+- AgriculturalResidues 
+- EnergyCropsHerbaceous
+- IntermediateOilseeds
+- EnergyCropsWoody
+- FireReductionThinnings 
+- ForestProcessingWaste 
+- LoggingResidues 
+- OtherForestWaste
+- SmallDiameterTrees
+- FOG 
+- Paper 
+- Plastic 
+- Other solid waste 
+- OtherWetWaste 
+- GaseousResourcesLandfillGas
+- GaseousResourcesCO2
+
+[//]: # (Intermediate oilseeds)
+
+[//]: # (    - `AgResidues`)
+
+[//]: # (    - `EnergyCrops`)
+
+[//]: # (    - `FoodWaste`)
+
+[//]: # (    - `Manure`)
+
+[//]: # (    - `MSW`)
+
 
 [//]: # (#### Optional Parameters)
 
@@ -410,7 +436,7 @@ The following query parameters must be specified in the GET request URI.
 
 #### Example Usage
 ```
-GET https://biositing.jbei.org/api/v1/state_data?state=CA&bt_scenario=near-term&resource_type=AgResidues
+GET https://biositing.jbei.org/api/v1/state_data?state=CA&bt_scenario=near-term&subclass=AgResidues
 ```
 
 
