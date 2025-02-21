@@ -382,7 +382,7 @@ The following query parameters must be specified in the GET request URI.
     - `emerging`
 
 
-`subclass`
+`bt_subclass`
 
 2023 Billion Ton Study resource subclass for which data should be queried. Must be one of the following:
 
@@ -437,7 +437,7 @@ The following query parameters must be specified in the GET request URI.
 
 #### Example Usage
 ```
-GET https://biositing.jbei.org/api/v1/state_data?state=CA&bt_scenario=near-term&subclass=AgResidues
+GET https://biositing.jbei.org/api/v1/state_data?state=CA&bt_scenario=near-term&bt_subclass=AgProcessingWaste
 ```
 
 
